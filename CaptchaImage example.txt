@@ -1,0 +1,54 @@
+<%@page import="javax.imageio.ImageIO"%>
+<%@page import="java.io.File"%>
+<%@page import="java.awt.image.BufferedImage"%>
+<%@page import="com.RajendraArora.CaptchaImage"%>
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Captcha made by Rajendra arora..</title>
+</head>
+<body>
+
+<%
+	String result = "Your code is invalid, Please type valid Captcha!";
+	String color = "red";
+    if(request.getParameter("captcha") != null && session.getAttribute("captchaStr") != null){
+		if(session.getAttribute("captchaStr").equals(request.getParameter("captcha"))){
+			result = "Congrats!!";
+			color = "green";
+		}
+	}
+
+	CaptchaImage obj = new CaptchaImage();
+	BufferedImage ima = obj.getCaptchaImage();
+	
+	File outputfile = new File("D://captchaImage.jpg");
+	ImageIO.write(ima, "jpg", outputfile);
+	String captchaStr = obj.getCaptchaString();
+	
+	session.setAttribute("captchaStr", captchaStr);
+
+%>
+
+
+<form action="index.jsp" method="post">
+	<table>
+		<tr>
+			<td><img alt="Captcha" src="D://captchaImage.jpg"/> </td>
+		</tr>
+		<tr>
+			<td> <input type="text" value="" name="captcha"> </td>
+		</tr>
+		<tr>
+			<td> <input type="submit" value="Submit"> </td>
+		</tr>
+		<tr>
+			<td> <font color="<%=color%>"> <%= result %></font></td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>
