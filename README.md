@@ -1,7 +1,7 @@
 CaptchaImage
 ============
 
-CaptchaImage, an open source API made by Rajendra arora.
+CaptchaImage, an API made by Rajendra arora.
 
 I hope so, you're really goona play with my small API. It's very easy to use and to implement with any dynamic content website, you just need to add this into external jar file as well.
 
