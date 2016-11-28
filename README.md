@@ -3,7 +3,7 @@ CaptchaImage
 
 CaptchaImage API
 
-I hope so, you're really goona play with my small API. It's very easy to use and to implement with any dynamic content website, you just need to add this into external jar file as well.
+I hope, you're really goona play with my small API. It's very easy to use and to implement with any dynamic content website, you just need to add this into external jar file as well.
 
 In this API simply contains a "CaptchaImage" class. so to implement this captcha into your website you just need to invoke as
 
